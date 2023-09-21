@@ -1,0 +1,156 @@
+/* Reset some defaults browser styles */
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: medium;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    color: #333;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header h1 {
+    margin: 0,2% 0;
+}
+
+header h2 {
+    margin: 0rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.5s ease;
+}
+
+nav a:hover {
+    color: #f4f4f4;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 160px);
+}
+
+aside {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+article {
+    flex: 1;
+}
+
+h3, h2 {
+    border-bottom: 2px solid #010807;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+p, li {
+    margin-bottom: 10px;
+}
+
+
+footer {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+}
+
+.right {
+    text-align: center;
+}
+.contact {
+    text-align: center;
+}
+
+.glow-on-hover {
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
